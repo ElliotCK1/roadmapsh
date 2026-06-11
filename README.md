@@ -14,3 +14,10 @@ https://roadmap.sh/projects/log-archive-tool
 cd logArchiveTool
 log-archive <log-directory>
 ```
+
+## 🔎 Nginx Log Analyser
+https://roadmap.sh/projects/nginx-log-analyser
+```bash
+cd nginxLogAnalyser
+./log-analyser.sh <log-file>
+```
