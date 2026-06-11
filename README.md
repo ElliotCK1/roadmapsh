@@ -1,12 +1,16 @@
 # Roadmap.sh | DevOps
 Project to take you from beginner to advanced in DevOps
 
-## Server Performance Stats
+## ⚡ Server Performance Stats
 https://roadmap.sh/projects/server-stats
 ```bash
 cd serverPerformanceStats
 ./server-stats.sh
 ```
 
-## Log Archive Tool
+## 📁 Log Archive Tool
 https://roadmap.sh/projects/log-archive-tool
+```bash
+cd logArchiveTool
+log-archive <log-directory>
+```
