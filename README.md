@@ -6,3 +6,7 @@ https://roadmap.sh/projects/server-stats
 ```bash
 cd serverPerformanceStats
 ./server-stats.sh
+```
+
+## Log Archive Tool
+https://roadmap.sh/projects/log-archive-tool

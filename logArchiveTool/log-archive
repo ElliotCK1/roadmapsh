@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -e
+
+# Check argument
+if [ -z "$1" ]; then
+    echo "Usage: log-archive <log-directory>"
+    exit 1
+fi
+
+LOG_DIR="$1"
+
+# Check if directory exists
+if [ ! -d "$LOG_DIR" ]; then
+    echo "ERROR: '$LOG_DIR' does not exist or is not a directory"
+    exit 1
+fi
+
+# Create archive directory if not existing
+ARCHIVE_DIR="archives"
+mkdir -p "$ARCHIVE_DIR"
+
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
+ARCHIVE_FILE="logs_archive_${TIMESTAMP}.tar.gz"
+
+# Create compressed file
+tar -czf "$ARCHIVE_DIR/$ARCHIVE_FILE" -C "$(dirname "$LOG_DIR")" "$(basename "$LOG_DIR")"
+
+# Log archive creation time
+echo "$(date +"%Y-%m-%d %H:%M:%S") - Created $ARCHIVE_FILE from $LOG_DIR" \
+    >> "$ARCHIVE_DIR/archive.log"
+
+echo "Archive created: $ARCHIVE_DIR/$ARCHIVE_FILE"
